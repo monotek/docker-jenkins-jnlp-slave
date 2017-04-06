@@ -1,4 +1,4 @@
-FROM jenkinsci/jnlp-slave
+FROM jenkinsci/jnlp-slave:latest
 
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - &&
 RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && add-apt-repository "deb [arch=amd64] https://apt.dockerproject.org/repo debian-jessie main"
