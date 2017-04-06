@@ -28,6 +28,9 @@ RUN apt-get remove docker.io
 RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && add-apt-repository "deb [arch=amd64] https://apt.dockerproject.org/repo debian-jessie main"
 RUN apt-get install -y docker-engine=1.11.2-0~jessie
 
+# cleanup
+RUN apt-get autoremove && rm -rf /var/lib/apt/lists/* 
+
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 
 #USER jenkins
