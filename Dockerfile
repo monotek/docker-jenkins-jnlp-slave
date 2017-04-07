@@ -1,6 +1,7 @@
 FROM openjdk:8-jdk
 MAINTAINER André Bauer <monotek23@gmail.com>
 
+# set home dir
 ENV HOME /home/jenkins
 
 # set jenkins version
@@ -27,20 +28,13 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     apt-get update && \
     apt-get -y install docker-ce
 
-# install docker 1.11.2
-#RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
-#    add-apt-repository "deb [arch=amd64] https://apt.dockerproject.org/repo debian-jessie main" && \
-#    apt-get update && \
-#    apt-get -y install docker-engine=1.11.2-0~jessie
-
 # cleanup
 RUN apt-get -y autoremove && rm -rf /var/lib/apt/lists/* 
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 
-#USER jenkins
 RUN mkdir /home/jenkins/.jenkins
 VOLUME /home/jenkins/.jenkins
 WORKDIR /home/jenkins
 
-ENTRYPOINT ["/usr/local/bin/jenkins-slave"]
+ENTRYPOINT ["/bin/bash"]
