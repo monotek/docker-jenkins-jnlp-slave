@@ -3,6 +3,7 @@ MAINTAINER André Bauer <monotek23@gmail.com>
 
 ENV HOME /home/jenkins
 
+# set jenkins version
 ARG VERSION=3.7
 
 # create jenkins user
@@ -18,21 +19,21 @@ RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-c
   && chmod 644 /usr/share/jenkins/slave.jar
 
 # remove debian docker
-RUN apt-get remove docker.io
+RUN apt-get -y remove docker.io
 
 # install docker ce
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
-    apt-get install docker-ce
+    apt-get -y install docker-ce
 
 # install docker 1.11.2
 #RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
 #    add-apt-repository "deb [arch=amd64] https://apt.dockerproject.org/repo debian-jessie main" && \
 #    apt-get update && \
-#    apt-get install -y docker-engine=1.11.2-0~jessie
+#    apt-get -y install docker-engine=1.11.2-0~jessie
 
 # cleanup
-RUN apt-get autoremove && rm -rf /var/lib/apt/lists/* 
+RUN apt-get -y autoremove && rm -rf /var/lib/apt/lists/* 
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 
