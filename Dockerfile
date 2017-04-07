@@ -12,7 +12,7 @@ RUN groupadd -g 10000 jenkins
 RUN useradd -c "Jenkins user" -d $HOME -u 10000 -g 10000 -m jenkins
 
 # install dependencies
-RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl software-properties-common mc sudo
+RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl software-properties-common mc sudo qemu-user-static binfmt-support
 
 # install slave.jar
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/${VERSION}/remoting-${VERSION}.jar \
@@ -29,7 +29,7 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     apt-get -y install docker-ce
 
 # cleanup
-RUN apt-get -y autoremove && rm -rf /var/lib/apt/lists/* 
+RUN apt-get -y autoremove && rm -rf /var/lib/apt/lists/*
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 
