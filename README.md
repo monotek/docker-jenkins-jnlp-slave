@@ -7,3 +7,7 @@
 ## to run arm docker contrainer inside jenkins slave:
 
 * docker run -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static armbuild/debian uname -a
+
+## Dockerhub Image:
+
+* https://hub.docker.com/r/monotek/jnlp-slave/
