@@ -31,10 +31,10 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
 # cleanup
 RUN apt-get -y autoremove && rm -rf /var/lib/apt/lists/*
 
-COPY jenkins-slave /usr/local/bin/jenkins-slave
-
 RUN mkdir /home/jenkins/.jenkins
 VOLUME /home/jenkins/.jenkins
 WORKDIR /home/jenkins
 
-ENTRYPOINT ["/bin/bash"]
+COPY jenkins-slave /usr/local/bin/jenkins-slave
+
+ENTRYPOINT ["/usr/local/bin/jenkins-slave"]
