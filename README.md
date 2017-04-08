@@ -11,3 +11,8 @@
 ## Dockerhub Image:
 
 * https://hub.docker.com/r/monotek/jnlp-slave/
+
+## If you Docker host is CentOS you have to:
+
+* install /usr/bin/qemu-arm-static
+* run "update-binfmts --enable qemu-arm" from the jenkins slave docker container
