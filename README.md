@@ -8,10 +8,6 @@
 
 * docker run -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static armbuild/debian uname -a
 
-## Dockerhub Image:
-
-* https://hub.docker.com/r/monotek/jnlp-slave/
-
 ## If you Docker host is CentOS you have to:
 
 * install /usr/bin/qemu-arm-static
