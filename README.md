@@ -7,7 +7,7 @@
 ## If your Docker host is CentOS you have to:
 
 * cp qemu-arm-static to /usr/bin/qemu-arm-static
-* if you use your own entrypoint get sure "update-binfmts --enable qemu-arm" is executed before start docker arm containers
+* if you use your own entrypoint get sure "update-binfmts --enable qemu-arm" is executed before starting docker arm containers
 
 ## run the jenkins slave via:
 
