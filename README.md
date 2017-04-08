@@ -1,4 +1,4 @@
-# jnlp-slave with docker-ce and support for arm docker containers
+# debian jessie jenkins jnlp-slave with docker-ce and support for arm docker containers
 
 ## run via:
 
