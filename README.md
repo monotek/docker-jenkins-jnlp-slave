@@ -1,6 +1,6 @@
 # debian jessie jenkins jnlp-slave with docker-ce and support for arm docker containers
 
-## If your on Debian/Ubuntu:
+## If you're on Debian/Ubuntu:
 
 * apt-get update;apt-get install qemu-user-static binfmt-support
 
