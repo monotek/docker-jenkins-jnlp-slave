@@ -8,7 +8,7 @@
 
 * docker run -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static armbuild/debian uname -a
 
-## If you Docker host is CentOS you have to:
+## If your Docker host is CentOS you have to:
 
 * install /usr/bin/qemu-arm-static
 * run "update-binfmts --enable qemu-arm" from the jenkins slave docker container
