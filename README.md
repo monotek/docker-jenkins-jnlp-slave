@@ -2,7 +2,7 @@
 
 ## run via:
 
-* docker run --privileged -ti -v /run/docker.sock:/run/docker.sock monotek/jnlp-slave
+* docker run --privileged -ti -v /run/docker.sock:/run/docker.sock monotek/jnlp-slave -url http://jenkins-server:port <secret> <agent name>
 
 ## to run arm docker contrainer inside jenkins slave:
 
