@@ -1,10 +1,11 @@
 # debian jessie jenkins jnlp-slave with docker-ce and support for arm docker containers
 
-## If you're on Debian/Ubuntu:
+
+## If your Docker host is Debian/Ubuntu you first have to:
 
 * apt-get update;apt-get install qemu-user-static binfmt-support
 
-## If your Docker host is CentOS you have to:
+## If your Docker host is CentOS you first have to:
 
 * cp qemu-arm-static to /usr/bin/qemu-arm-static
 * if you use your own entrypoint get sure "update-binfmts --enable qemu-arm" is executed before starting docker arm containers
